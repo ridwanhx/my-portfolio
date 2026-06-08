@@ -19,11 +19,11 @@ const Navbar = () => {
                 <NavbarLinks className="hidden md:flex" />
 
                 {/* Bagian Kanan: Bahasa & Hamburger */}
-                <div className="flex items-center space-x-2">
+                <div className="flex items-center gap-2">
                     {/* Pengaturan bahasa */}
-                    <button type="button" className="flex items-center space-x-1 bg-slate-100 hover:bg-slate-200 px-3 py-1.5 rounded-full text-xs font-bold text-slate-700 cursor-pointer transition-colors">
+                    <button type="button" className="flex items-center space-x-1 bg-slate-100 hover:bg-slate-200 px-3 py-1.5 rounded-full font-bold text-slate-700 cursor-pointer transition-colors">
                         <GlobeIcon height="1.1em" className="text-slate-500" />
-                        <span>EN</span>
+                        <span className="text-xs">EN</span>
                     </button>
 
                     {/* Hamburger untuk mobile */}

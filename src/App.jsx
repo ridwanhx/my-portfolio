@@ -1,5 +1,7 @@
 import Navbar from './components/navigations/Navbar'
 import './App.css'
+import HomeSection from './components/sections/home/HomeSection';
+import AboutSection from './components/sections/about/AboutSection';
 
 function App() {
   return (
@@ -8,10 +10,9 @@ function App() {
         <Navbar/>
       </header>
 
-      <main className="mt-20">
-        <section>Section 1</section>
-        <section>Section 2</section>
-        <section>Section 3</section>
+      <main className="mt-16 md:mt-0">
+        <HomeSection/>
+        <AboutSection/>
       </main>
 
       <footer>
