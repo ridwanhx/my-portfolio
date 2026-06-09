@@ -9,7 +9,7 @@ const NavbarLinks = ({ className = "" }) => {
         { name: 'Home', href: '#home', icon: <HomeIcon height="1.1em" />, hoverClass: "hover:bg-indigo-600" },
         { name: 'About', href: '#about', icon: <PersonOutlineIcon height="1.1em" />, hoverClass: "hover:bg-pink-600" },
         { name: 'Experience', href: '#experience', icon: <BriefcaseIcon height="1.1em" />, hoverClass: "hover:bg-indigo-600" },
-        { name: 'Projects', href: '#projects', icon: <FolderIcon height="1.1em" />, hoverClass: "hover:bg-amber-400" },
+        { name: 'Projects', href: '#projects', icon: <FolderIcon height="1.1em" />, hoverClass: "hover:bg-amber-500" },
         { name: 'Contact', href: '#contact', icon: <MailIcon height="1.1em" />, hoverClass: "hover:bg-slate-900" },
     ];
 

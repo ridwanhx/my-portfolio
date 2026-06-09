@@ -36,11 +36,11 @@ const HomeSection = () => {
 
                     {/* main actions */}
                     <div className="flex items-center gap-4">
-                        <a href="#projects" className="flex items-center justify-center space-x-1.5 px-5 py-3 rounded-full bg-indigo-600 text-white font-medium hover:bg-indigo-700 transition-colors">
+                        <a href="#projects" className="flex items-center justify-center space-x-1.5 px-5 py-3 rounded-full bg-indigo-600 text-white font-medium hover:bg-indigo-700 transition-colors text-xs md:text-sm">
                             <BriefcaseIcon height="1.5em" />
                             <span>View Project</span>
                         </a>
-                        <a href="#contact" className="flex items-center justify-center space-x-1.5 px-5 py-3 border border-slate-300 rounded-full font-medium hover:bg-slate-50 transition-colors">
+                        <a href="#contact" className="flex items-center justify-center space-x-1.5 px-5 py-3 border border-slate-300 rounded-full font-medium hover:bg-slate-50 transition-colors text-xs md:text-sm">
                             <MailIcon height="1.5em" />
                             <span>Contact Me</span>
                         </a>
