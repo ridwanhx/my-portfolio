@@ -1,6 +1,19 @@
 /* import tailwind css */
 @import "tailwindcss";
 
-.custom-shadow {
-    box-shadow: 12px 12px 0 12px rgba(0, 0, 0, .5);
+@theme {
+  /* Daftarkan utility class animasi baru */
+  --animate-scroll-left: scroll-left 25s linear infinite;
+  --animate-scroll-right: scroll-right 25s linear infinite;
+
+  /* Daftarkan keyframes animasi */
+  @keyframes scroll-left {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+  }
+  
+  @keyframes scroll-right {
+    0% { transform: translateX(-50%); }
+    100% { transform: translateX(0); }
+  }
 }
