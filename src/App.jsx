@@ -2,7 +2,8 @@ import Navbar from './components/navigations/Navbar'
 import './App.css'
 import HomeSection from './components/sections/home/HomeSection';
 import AboutSection from './components/sections/about/AboutSection';
-import TechSkillsSection from './components/sections/tech-skills/TechSkillsSection';
+import TechSkillSection from './components/sections/tech-skills/TechSkillSection';
+import CertificateSection from './components/sections/certificates/CertificateSection';
 
 function App() {
   return (
@@ -14,7 +15,8 @@ function App() {
       <main className="mt-16 md:mt-0">
         <HomeSection/>
         <AboutSection />
-        <TechSkillsSection/>
+        <TechSkillSection />
+        <CertificateSection/>
       </main>
 
       <footer>
