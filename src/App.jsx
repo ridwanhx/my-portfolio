@@ -6,6 +6,7 @@ import TechSkillSection from './components/sections/tech-skills/TechSkillSection
 import CertificateSection from './components/sections/certificates/CertificateSection';
 import WorkExperienceSection from './components/sections/work-experience/WorkExperienceSection';
 import ProjectSection from './components/sections/project/ProjectSection';
+import ContactSection from './components/sections/contact/ContactSection';
 
 function App() {
   return (
@@ -20,12 +21,9 @@ function App() {
         <TechSkillSection />
         <CertificateSection />
         <WorkExperienceSection />
-        <ProjectSection/>
+        <ProjectSection />
+        <ContactSection/>
       </main>
-
-      <footer>
-        <p>Ini adalah bagian footer</p>
-      </footer>
     </>
   );
 }
