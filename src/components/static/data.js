@@ -35,6 +35,19 @@ export const PROJECTS_DATA = [
             { id: "tailwind-1", name: "Tailwind CSS", icon: TailwindcssIcon },
             { id: "mysql-1", name: "MySQL", icon: MysqlIcon }
         ]
-    }
+    },
+    {
+        id: "monitoring-website-platform",
+        title: "Monitoring Website Platform",
+        description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
+        imageUrl: "",
+        technologies: [
+            { id: "html-1", name: "HTML", icon: Html5Icon },
+            { id: "javascript-1", name: "Javascript", icon: JavascriptIcon },
+            { id: "php-1", name: "PHP", icon: PhpIcon },
+            { id: "tailwind-1", name: "Tailwind CSS", icon: TailwindcssIcon },
+            { id: "mysql-1", name: "MySQL", icon: MysqlIcon }
+        ]
+    },
 ];
 
