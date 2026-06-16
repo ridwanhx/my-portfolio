@@ -1,5 +1,9 @@
-/* import tailwind css */
 @import "tailwindcss";
+
+html, body {
+  scroll-behavior: smooth;
+  scroll-padding-top: 85px; 
+}
 
 @theme {
   --animate-scroll-left: scroll-left 25s linear infinite;
@@ -29,7 +33,6 @@
   opacity: 0.4;
 }
 
-/* Media Queries */
 @media (min-width: 768px) {
   .card-magician-deck:hover .card-layer-middle {
     transform: rotate(8deg) translate(40px, -15px);

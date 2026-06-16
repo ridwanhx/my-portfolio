@@ -4,32 +4,63 @@ import NavbarMobile from "./NavbarMobile";
 import HamburgerIcon from '@iconify-react/mdi/hamburger';
 import CloseIcon from '@iconify-react/lucide/x';
 import GlobeIcon from '@iconify-react/lucide/globe';
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 const Navbar = () => {
     const [isOpen, setIsOpen] = useState(false);
+    const [activeSection, setActiveSection] = useState("home");
+
+    useEffect(() => {
+        const sections = ["home", "about", "experience", "projects", "contact"];
+        
+        const observerOptions = {
+            root: null,
+            rootMargin: "-35% 0px -60% 0px", 
+            threshold: 0,
+        };
+
+        const observerCallback = (entries) => {
+            entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                    setActiveSection(entry.target.id);
+                }
+            });
+        };
+
+        const observer = new IntersectionObserver(observerCallback, observerOptions);
+
+        sections.forEach((id) => {
+            const element = document.getElementById(id);
+            if (element) observer.observe(element);
+        });
+
+        return () => observer.disconnect();
+    }, []);
+
+    const handleScrollClick = () => {
+        setIsOpen(false);
+    };
 
     return (
-        <nav className="fixed top-3 left-1/2 -translate-x-1/2 w-full max-w-2xl bg-white/90 backdrop-blur-md shadow-md border border-slate-200/80 z-50 rounded-full px-2">
+        <nav className="fixed top-3 left-1/2 -translate-x-1/2 w-[calc(100%-1.5rem)] max-w-2xl bg-white/80 backdrop-blur-lg shadow-md border border-slate-200/50 z-50 rounded-full px-2 transition-all duration-300">
             <div className="px-3 h-12 flex items-center justify-between">
-                {/* Navbar brand */}
                 <NavbarBrand />
                 
-                {/* Desktop menu */}
-                <NavbarLinks className="hidden md:flex" />
+                <NavbarLinks 
+                    className="hidden md:flex" 
+                    activeSection={activeSection} 
+                    onLinkClick={handleScrollClick} 
+                />
 
-                {/* Bagian Kanan: Bahasa & Hamburger */}
                 <div className="flex items-center gap-2">
-                    {/* Pengaturan bahasa */}
                     <button type="button" className="flex items-center space-x-1 bg-slate-100 hover:bg-slate-200 px-3 py-1.5 rounded-full font-bold text-slate-700 cursor-pointer transition-colors">
                         <GlobeIcon height="1.1em" className="text-slate-500" />
                         <span className="text-xs">EN</span>
                     </button>
 
-                    {/* Hamburger untuk mobile */}
                     <button 
                         onClick={() => setIsOpen(!isOpen)} 
-                        className="p-1.5 text-slate-600 hover:bg-slate-100 rounded-full md:hidden cursor-pointer transition-colors"
+                        className={`p-1.5 text-slate-600 rounded-full md:hidden cursor-pointer transition-all duration-300 ${isOpen ? 'bg-slate-100 rotate-90' : 'hover:bg-slate-100'}`}
                         aria-label="Toggle Menu"
                     >
                         {isOpen ? <CloseIcon height="1.3em" /> : <HamburgerIcon height="1.3em" />}
@@ -37,8 +68,11 @@ const Navbar = () => {
                 </div>
             </div>
 
-            {/* Menu mobile dengan kontrol state */}
-            <NavbarMobile isOpen={isOpen} setIsOpen={setIsOpen} />
+            <NavbarMobile 
+                isOpen={isOpen} 
+                activeSection={activeSection} 
+                onLinkClick={handleScrollClick} 
+            />
         </nav>
     );
 }
