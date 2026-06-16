@@ -23,14 +23,10 @@ const ProfileDescription = ({ fullName = "Guest", positionName = "Developer" }) 
 
       <div className="mb-8 border-l-4 border-indigo-600 ps-4 tracking-normal leading-relaxed text-slate-600 font-normal text-sm md:text-base">
         <p className="mb-4">
-          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Laboriosam
-          provident eaque beatae recusandae ipsam. Labore mollitia veniam
-          similique.
+          As a Fullstack Developer, I specialize in engineering scalable, end-to-end web solutions. My technical expertise bridges high-performance backend systems with dynamic, modern user interfaces.
         </p>
         <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima
-          perferendis nesciunt debitis modi quo quam doloribus assumenda error
-          nam, laborum, illo aliquam voluptatibus vero?
+          My daily stack includes building robust ecosystems utilizing Laravel, React, and Next.js. Focused on efficiency and clean architecture, I deliver high-quality, secure digital products tailored to modern industry standards.
         </p>
       </div>
 

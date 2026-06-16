@@ -1,7 +1,7 @@
 // aset gambar
-import FundamentalCertification from "../../../assets/img/fundamental-web.webp";
-import LaravelCertification from "../../../assets/img/sertifikat-laravel.webp";
-import GoCertification from "../../../assets/img/sertifikat-golang.webp";
+import FundamentalCertification from "../../../assets/img/fundamental-web.svg";
+import LaravelCertification from "../../../assets/img/sertifikat-laravel.svg";
+import GoCertification from "../../../assets/img/sertifikat-golang.svg";
 import BNSPCertification from "../../../assets/img/BNSP-Custom.svg";
 import CertificateCard from "./CertificateCard";
 
