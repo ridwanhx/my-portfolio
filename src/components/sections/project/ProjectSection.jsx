@@ -7,7 +7,7 @@ const ProjectSection = () => {
     const [selectedProject, setSelectedProject] = useState(null);
 
     return (
-        <section id="projects" className="py-16 md:py-24">
+        <section id="projects" className="pb-16 md:pb-24">
             <div className="max-w-5xl mx-auto px-4">
                 <header className="text-center pb-12 md:pb-16">
                     <h2 id="projects-title" className="text-2xl md:text-4xl font-bold tracking-tight mb-4">

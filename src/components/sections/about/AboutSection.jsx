@@ -3,7 +3,7 @@ import ProfileDescription from './ProfileDescription';
 
 const AboutSection = () => {
     return (
-        <section id="about" className="py-16 md:py-24 overflow-hidden">
+        <section id="about" className="pb-16 md:pb-24 overflow-hidden">
             <div className="max-w-5xl mx-auto px-4 grid md:grid-cols-2 gap-12 md:gap-8 items-center">
                 
                 {/* Kolom Kiri: Picture Card */}
