@@ -1,8 +1,15 @@
-import Html5Icon from '@iconify-react/devicon/html5';
-import JavascriptIcon from '@iconify-react/devicon/javascript';
-import PhpIcon from '@iconify-react/devicon/php';
 import TailwindcssIcon from '@iconify-react/devicon/tailwindcss';
 import MysqlIcon from '@iconify-react/devicon/mysql';
+import CodeigniterIcon from '@iconify-react/logos/codeigniter-icon';
+import BootstrapIcon from '@iconify-react/devicon/bootstrap';
+import FigmaIcon from '@iconify-react/devicon/figma';
+import GithubIcon from '@iconify-react/devicon/github';
+import TrelloIcon from '@iconify-react/devicon/trello';
+import LaravelIcon from '@iconify-react/devicon/laravel';
+import VitejsIcon from '@iconify-react/devicon/vitejs';
+import ReactIcon from '@iconify-react/devicon/react';
+import SupabaseIcon from '@iconify-react/devicon/supabase';
+import FiberIcon from '@iconify-react/devicon/fiber';
 
 export const WORK_EXPERIENCE = [
     {
@@ -38,30 +45,76 @@ export const WORK_EXPERIENCE = [
 
 export const PROJECTS_DATA = [
     {
-        id: "course-attendance-portal",
-        title: "Course Attendance Web Portal",
-        description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
-        imageUrl: "",
+        id: "pundihijau-app",
+        title: "Web Application for Sustainable Waste Bank Management (PUNDIHIJAU)",
+        description: "An eco-friendly platform designed to streamline waste bank operations, enabling users to track their recycling contributions, manage waste deposits, and convert accumulated waste into financial savings effectively.",
+        imageUrl: "../../../src/assets/img/Pundihijau.svg",
         technologies: [
-            { id: "html-1", name: "HTML", icon: Html5Icon },
-            { id: "javascript-1", name: "Javascript", icon: JavascriptIcon },
-            { id: "php-1", name: "PHP", icon: PhpIcon },
+            { id: "react-1", name: "React", icon: ReactIcon },
+            { id: "laravel-1", name: "Laravel", icon: LaravelIcon },
             { id: "tailwind-1", name: "Tailwind CSS", icon: TailwindcssIcon },
-            { id: "mysql-1", name: "MySQL", icon: MysqlIcon }
+            { id: "vite-1", name: "Vite", icon: VitejsIcon },
+            { id: "mysql-1", name: "MySQL", icon: MysqlIcon },
+            { id: "figma-1", name: "Figma", icon: FigmaIcon },
+            { id: "github-1", name: "Github", icon: GithubIcon },
         ]
     },
     {
-        id: "monitoring-website-platform",
-        title: "Monitoring Website Platform",
-        description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
-        imageUrl: "",
+        id: "ulasin-app",
+        title: "Web Application for Cinema Reviews & Ratings (ULASIN)",
+        description: "A dynamic movie review hub where film enthusiasts can discover popular titles, share authentic ratings, write uncensored critiques, and engage with a community-driven database of cinematic insights.",
+        imageUrl: "../../../src/assets/img/Ulasin.svg",
         technologies: [
-            { id: "html-1", name: "HTML", icon: Html5Icon },
-            { id: "javascript-1", name: "Javascript", icon: JavascriptIcon },
-            { id: "php-1", name: "PHP", icon: PhpIcon },
+            { id: "react-1", name: "React", icon: ReactIcon },
             { id: "tailwind-1", name: "Tailwind CSS", icon: TailwindcssIcon },
-            { id: "mysql-1", name: "MySQL", icon: MysqlIcon }
+            { id: "fiber-1", name: "Fiber", icon: FiberIcon },
+            { id: "supabase-1", name: "Supabase (PostgreSQL)", icon: SupabaseIcon },
+            { id: "vite-1", name: "Vite", icon: VitejsIcon },
+            { id: "figma-1", name: "Figma", icon: FigmaIcon },
+            { id: "github-1", name: "Github", icon: GithubIcon },
+        ]
+    },
+    {
+        id: "neu-internity-app",
+        title: "Web Application for Intern Daily Activity Monitoring (NEU INTERNITY)",
+        description: "A monitoring tool built to track interns' daily progress and tasks. It facilitates transparent logbook management, supervisor evaluations, and activity tracking for seamless internship workflows.",
+        imageUrl: "../../../src/assets/img/Neu-internity.svg",
+        technologies: [
+            { id: "laravel-1", name: "Laravel", icon: LaravelIcon },
+            { id: "tailwind-1", name: "Tailwind CSS", icon: TailwindcssIcon },
+            { id: "vite-1", name: "Vite", icon: VitejsIcon },
+            { id: "mysql-1", name: "MySQL", icon: MysqlIcon },
+            { id: "figma-1", name: "Figma", icon: FigmaIcon },
+            { id: "github-1", name: "Github", icon: GithubIcon },
+        ]
+    },
+    {
+        id: "simonipro-app",
+        title: "Web Application for Project Course Monitoring (SIMONIPRO)",
+        description: "A structured academic management web system engineered to monitor course project milestones, allowing students and instructors to collaborate, submit deliverables, and track project grading criteria.",
+        imageUrl: "../../../src/assets/img/Simonipro.svg",
+        technologies: [
+            { id: "codeigniter-1", name: "Codeigniter", icon: CodeigniterIcon },
+            { id: "bootstrap-1", name: "Bootstrap", icon: BootstrapIcon },
+            { id: "mysql-1", name: "MySQL", icon: MysqlIcon },
+            { id: "figma-1", name: "Figma", icon: FigmaIcon },
+            { id: "github-1", name: "Github", icon: GithubIcon },
+        ]
+    },
+    {
+        id: "disunting-app",
+        title: "Digital Platform for Stunting Education (DISUNTING)",
+        description: "An interactive educational web platform focused on raising stunting awareness. It provides communities with critical nutritional guides, health metrics tracking, and child growth monitoring tools.",
+        imageUrl: "../../../src/assets/img/Disunting.svg",
+        technologies: [
+            { id: "codeigniter-1", name: "Codeigniter", icon: CodeigniterIcon },
+            { id: "bootstrap-1", name: "Bootstrap", icon: BootstrapIcon },
+            { id: "mysql-1", name: "MySQL", icon: MysqlIcon },
+            { id: "figma-1", name: "Figma", icon: FigmaIcon },
+            { id: "github-1", name: "Github", icon: GithubIcon },
+            { id: "trello-1", name: "Trello", icon: TrelloIcon },
         ]
     },
 ];
+
 

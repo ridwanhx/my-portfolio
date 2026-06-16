@@ -12,6 +12,7 @@
   "dependencies": {
     "@iconify-react/devicon": "^1.0.5",
     "@iconify-react/eva": "^1.0.2",
+    "@iconify-react/logos": "^1.0.3",
     "@iconify-react/lucide": "^1.0.17",
     "@iconify-react/mdi": "^1.0.2",
     "@iconify-react/tabler": "^1.0.9",
