@@ -1,12 +1,15 @@
+import ProfileImg from "../../../assets/img/profile-badge.webp";
+
 const ProfileStatusBadge = () => {
   return (
     <div className="w-full p-3 bg-slate-700/50 backdrop-blur-md rounded-full flex items-center justify-between gap-2">
       <div className="flex items-center gap-3">
         {/* Avatar Placeholder */}
-        <div
-          className="w-10 h-10 bg-red-300 rounded-full shrink-0"
-          aria-hidden="true"
-        ></div>
+        <img
+          src={ProfileImg}
+          alt="Muhamad Ridwan Avatar"
+          className="w-10 h-10 rounded-full object-cover shrink-0 border border-white/20"
+        />
         <div className="truncate">
           <span className="text-xs font-semibold text-white block truncate">
             @muha.rdwn0414

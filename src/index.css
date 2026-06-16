@@ -2,18 +2,16 @@
 @import "tailwindcss";
 
 @theme {
-  /* Daftarkan utility class animasi baru */
+  /* ... animasi badges dan blink kamu yang sudah ada ... */
   --animate-scroll-left: scroll-left 25s linear infinite;
   --animate-scroll-right: scroll-right 25s linear infinite;
+  @keyframes scroll-left { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
+  @keyframes scroll-right { 0% { transform: translateX(-50%); } 100% { transform: translateX(0); } }
+  @keyframes blink { 50% { border-color: transparent; } 100% { border-color: currentColor; } }
+  --animate-blink: blink 0.7s infinite;
+}
 
-  /* Daftarkan keyframes animasi */
-  @keyframes scroll-left {
-    0% { transform: translateX(0); }
-    100% { transform: translateX(-50%); }
-  }
-  
-  @keyframes scroll-right {
-    0% { transform: translateX(-50%); }
-    100% { transform: translateX(0); }
-  }
+/* Membuka ruang dimensi 3D untuk komponen di dalamnya */
+.preserve-3d {
+  transform-style: preserve-3d;
 }
