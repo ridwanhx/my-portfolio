@@ -2,7 +2,6 @@
 @import "tailwindcss";
 
 @theme {
-  /* ... animasi badges dan blink kamu yang sudah ada ... */
   --animate-scroll-left: scroll-left 25s linear infinite;
   --animate-scroll-right: scroll-right 25s linear infinite;
   @keyframes scroll-left { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
@@ -11,7 +10,34 @@
   --animate-blink: blink 0.7s infinite;
 }
 
-/* Membuka ruang dimensi 3D untuk komponen di dalamnya */
 .preserve-3d {
   transform-style: preserve-3d;
+}
+
+.card-magician-deck .card-layer {
+  transform-origin: bottom left;
+  transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.card-magician-deck:hover .card-layer-middle {
+  transform: rotate(5deg) translate(25px, -10px);
+  opacity: 0.7;
+}
+
+.card-magician-deck:hover .card-layer-back {
+  transform: rotate(10deg) translate(50px, -20px);
+  opacity: 0.4;
+}
+
+/* Media Queries */
+@media (min-width: 768px) {
+  .card-magician-deck:hover .card-layer-middle {
+    transform: rotate(8deg) translate(40px, -15px);
+    opacity: 0.7;
+  }
+
+  .card-magician-deck:hover .card-layer-back {
+    transform: rotate(16deg) translate(80px, -30px);
+    opacity: 0.4;
+  }
 }

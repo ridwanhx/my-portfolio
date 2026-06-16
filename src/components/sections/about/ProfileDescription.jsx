@@ -10,12 +10,12 @@ const ProfileDescription = ({ fullName = "Guest", positionName = "Developer" }) 
         <h3 className="text-xl lg:text-3xl font-bold text-slate-800 tracking-tight leading-tight flex flex-col gap-4 items-start">
           <span>
             I am{" "}
-            <span className="inline-block text-white bg-indigo-600 px-3 py-1.5 rounded-xl -rotate-2 shadow-md font-black">
+            <span className="inline-block text-white bg-indigo-600 px-3 py-1.5 rounded-xl -rotate-2 shadow-md font-black transition-transform duration-300 hover:rotate-0 hover:scale-110 cursor-default">
               { fullName }
             </span>
             ,
           </span>
-          <span className="inline-block text-emerald-950 bg-emerald-400 px-3 py-1.5 rounded-xl shadow-sm rotate-2 font-black">
+          <span className="inline-block text-emerald-950 bg-emerald-400 px-3 py-1.5 rounded-xl shadow-sm rotate-2 font-black transition-transform duration-300 hover:rotate-0 hover:scale-110 cursor-default">
             {positionName}
           </span>
         </h3>
