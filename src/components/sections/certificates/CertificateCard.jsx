@@ -4,7 +4,7 @@ const CertificateCard = ({ image, title }) => {
       <img
         src={image}
         alt={title || "Sertifikat Kompetensi"}
-        className="w-full h-full object-contain p-2"
+        className="w-full h-full object-contain"
       />
     </div>
   );

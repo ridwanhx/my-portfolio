@@ -7,19 +7,33 @@ import MysqlIcon from '@iconify-react/devicon/mysql';
 export const WORK_EXPERIENCE = [
     {
         id: crypto.randomUUID(),
-        role: "Quality Assurance",
-        company: "PT Neuronworks Indonesia",
+        role: "QA Tester Intern",
+        company: "PT. Neuronworks Indonesia",
         period: "Apr 2025 - Oct 2025",
         dateTime: "2025-04/2025-10",
         location: "Bandung, Indonesia",
         responsibilities: [
-            "Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus illum eveniet rem velit earum exercitationem, nisi ad voluptatum facilis qui.",
-            "Mola ipsum dolor sit amet consectetur adipisicing elit. Doloribus illum eveniet rem velit earum exercitationem, nisi ad voluptatum facilis qui.",
-            "Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus illum eveniet rem velit earum exercitationem, nisi ad voluptatum facilis qui.",
-            "Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus illum eveniet rem velit earum exercitationem, nisi ad voluptatum facilis qui."
+            "Menganalisis spesifikasi kebutuhan sistem untuk memahami alur bisnis yang akan diuji.",
+            "Menyusun skenario pengujian (test cases) yang komprehensif guna meminimalisir celah error.",
+            "Mendokumentasikan temuan teknis dan bug secara sistematis melalui platform GitLab.",
+            "Berkolaborasi aktif dengan tim pengembang dalam memastikan resolusi masalah sesuai standar kualitas."
         ],
-        technologies: ["Javascript", "Playwright", "Postman"]
+        technologies: ["JavaScript", "Postman", "Playwright", "GitLab"]
     },
+    {
+        id: crypto.randomUUID(),
+        role: "IT Support Intern",
+        company: "PT. Jasamedika Saranatama",
+        period: "Jun 2021 - Sep 2021",
+        dateTime: "2021-06/2021-09",
+        location: "Bandung, Indonesia",
+        responsibilities: [
+            "Memantau dan mengidentifikasi kendala teknis yang terjadi pada operasional harian.",
+            "Mendokumentasikan laporan kendala IT secara rutin untuk menjaga transparansi performa sistem.",
+            "Menyediakan data laporan valid sebagai bahan evaluasi perbaikan sistem IT perusahaan."
+        ],
+        technologies: ["Microsoft SQL Server"]
+    }
 ];
 
 export const PROJECTS_DATA = [
