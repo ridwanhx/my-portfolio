@@ -12,7 +12,7 @@ export const experiencesData = [
       "Systematically documented technical findings and bugs utilizing the GitLab platform.",
       "Collaborated actively with the development team to ensure effective bug resolution according to quality standards."
     ],
-    techKeys: ["javascript", "postman", "playwright", "github"] // disesuaikan ke TECH_REGISTRY key
+    technologies: ["javascript", "postman", "playwright", "github"] 
   },
   {
     id: "exp-jasamedika",
@@ -26,6 +26,6 @@ export const experiencesData = [
       "Regularly documented IT trouble logs to maintain operational system transparency.",
       "Provided valid report data as evaluating materials for company IT infrastructure improvements."
     ],
-    techKeys: ["mysql"]
+    technologies: ["mysql"]
   }
 ];

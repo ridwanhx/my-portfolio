@@ -12,7 +12,7 @@ export const experiencesData = [
       "Mendokumentasikan temuan teknis dan bug secara sistematis melalui platform GitLab.",
       "Berkolaborasi aktif dengan tim pengembang dalam memastikan resolusi masalah sesuai standar kualitas."
     ],
-    techKeys: ["javascript", "postman", "playwright", "github"]
+    technologies: ["javascript", "postman", "playwright", "github"]
   },
   {
     id: "exp-jasamedika",
@@ -26,6 +26,6 @@ export const experiencesData = [
       "Mendokumentasikan laporan kendala IT secara rutin untuk menjaga transparansi performa sistem.",
       "Menyediakan data laporan valid sebagai bahan evaluasi perbaikan sistem IT perusahaan."
     ],
-    techKeys: ["mysql"]
+    technologies: ["mysql"]
   }
 ];
