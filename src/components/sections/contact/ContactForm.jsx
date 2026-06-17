@@ -1,9 +1,21 @@
 import { useState } from "react";
 import { Icon } from "@iconify/react";
-import { CONTACT_DATA } from "../../static/data";
+import { useLanguage } from "../../../context/LanguageContext";
+import { TELEGRAM_CONFIG } from "../../static/config";
 import InputField from "./InputField";
 
 const ContactForm = () => {
+  const { data } = useLanguage();
+  
+  // Memberikan fallback nilai objek kosong agar form tidak crash atau menghilang (return null)
+  const formLang = data?.CONTACT_DATA?.form || {
+    note: "",
+    labels: { name: "", email: "", message: "" },
+    placeholders: { name: "", email: "", message: "" },
+    buttons: { send: "", sending: "" },
+    messages: { success: "", failed: "" }
+  };
+
   const [formData, setFormData] = useState({
     full_name: "",
     email: "",
@@ -19,7 +31,7 @@ const ContactForm = () => {
     e.preventDefault();
     setStatus({ loading: true, success: null });
 
-    const { token, chatId } = CONTACT_DATA.telegram;
+    const { token, chatId } = TELEGRAM_CONFIG;
     const formatMessage =
       `📩 <b>New Message From Portfolio</b>\n\n` +
       `👤 <b>Name:</b> ${formData.full_name}\n` +
@@ -61,33 +73,32 @@ const ContactForm = () => {
           height="1.5em"
         />
         <p>
-          <strong>Note:</strong> To get a faster response regarding your
-          project, please remember to include your{" "}
-          <strong>Telegram username</strong> inside the message block below.
+          <strong>Note:</strong> {formLang.note}
         </p>
       </div>
+      
       <InputField
         id="full_name"
-        label="Full Name"
-        placeholder="Enter your name"
+        label={formLang.labels.name}
+        placeholder={formLang.placeholders.name}
         value={formData.full_name}
         onChange={handleChange}
         required
       />
       <InputField
         id="email"
-        label="Email Address"
+        label={formLang.labels.email}
         type="email"
-        placeholder="name@email.com"
+        placeholder={formLang.placeholders.email}
         value={formData.email}
         onChange={handleChange}
         required
       />
       <InputField
         id="message"
-        label="Message"
+        label={formLang.labels.message}
         isTextArea
-        placeholder="Tell me about your project or idea..."
+        placeholder={formLang.placeholders.message}
         value={formData.message}
         onChange={handleChange}
         required
@@ -103,18 +114,18 @@ const ContactForm = () => {
           height="1.5em"
         />
         <span className="font-medium text-sm">
-          {status.loading ? "Sending..." : "Send Message"}
+          {status.loading ? formLang.buttons.sending : formLang.buttons.send}
         </span>
       </button>
 
       {status.success === true && (
         <p className="text-sm font-medium text-emerald-600 text-center">
-          Message sent successfully to Telegram!
+          {formLang.messages.success}
         </p>
       )}
       {status.success === false && (
         <p className="text-sm font-medium text-rose-600 text-center">
-          Failed to send message. Try again later.
+          {formLang.messages.failed}
         </p>
       )}
     </form>

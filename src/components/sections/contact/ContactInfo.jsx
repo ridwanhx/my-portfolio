@@ -1,8 +1,15 @@
-import { CONTACT_DATA } from "../../static/data";
+import { useLanguage } from "../../../context/LanguageContext";
 import ContactMethod from "./ContactMethod";
 
 const ContactInfo = () => {
-  const { title, description, methods } = CONTACT_DATA.info;
+  const { data } = useLanguage();
+  
+  // Menggunakan fallback jika objek data belum sepenuhnya termuat dari index locale
+  const { title, description, methods } = data?.CONTACT_DATA?.info || {
+    title: "",
+    description: "",
+    methods: []
+  };
 
   return (
     <div>

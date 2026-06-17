@@ -3,6 +3,7 @@ import { aboutData } from './id/about';
 import { certificatesData } from './id/certificates';
 import { experiencesData } from './id/experiences';
 import { projectsData } from './id/projects';
+import { contactData } from './id/contact';
 
 export const id = {
   HOME_DATA: homeData,
@@ -10,11 +11,5 @@ export const id = {
   CERTIFICATES_DATA: certificatesData,
   WORK_EXPERIENCE: experiencesData,
   PROJECTS_DATA: projectsData,
-  CONTACT_DATA: {
-    title: "Hubungi Saya.",
-    description: "Punya proyek impian atau ingin berkolaborasi? Jangan ragu untuk menghubungi melalui formulir atau metode kontak langsung.",
-    emailLabel: "Email",
-    locationLabel: "Lokasi",
-    locationValue: "Bandung, Indonesia"
-  }
+  CONTACT_DATA: contactData
 };
