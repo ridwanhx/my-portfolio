@@ -7,10 +7,11 @@ import CertificateSection from './components/sections/certificates/CertificateSe
 import WorkExperienceSection from './components/sections/work-experience/WorkExperienceSection';
 import ProjectSection from './components/sections/project/ProjectSection';
 import ContactSection from './components/sections/contact/ContactSection';
+import { LanguageProvider } from './context/LanguageContext'; // Sesuaikan path jika berbeda
 
 function App() {
   return (
-    <>
+    <LanguageProvider>
       <header>
         <Navbar/>
       </header>
@@ -24,8 +25,8 @@ function App() {
         <ProjectSection />
         <ContactSection/>
       </main>
-    </>
+    </LanguageProvider>
   );
 }
 
-export default App
+export default App;

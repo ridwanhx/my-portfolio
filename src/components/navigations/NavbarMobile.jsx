@@ -4,14 +4,17 @@ import BriefcaseIcon from '@iconify-react/lucide/briefcase';
 import FolderIcon from '@iconify-react/lucide/folder';
 import MailIcon from '@iconify-react/lucide/mail';
 import ChevronRight from '@iconify-react/lucide/chevron-right';
+import { useLanguage } from "../../context/LanguageContext";
 
 const NavbarMobile = ({ isOpen, activeSection, onLinkClick }) => {
+    const { locale } = useLanguage();
+
     const links = [
-        { name: 'Home', id: 'home', href: '#home', icon: <HomeIcon height="1.2em" />, color: "text-indigo-500", bgActive: "bg-indigo-50/70 border-indigo-100", borderActive: "bg-indigo-500" },
-        { name: 'About', id: 'about', href: '#about', icon: <PersonOutlineIcon height="1.2em" />, color: "text-pink-500", bgActive: "bg-pink-50/70 border-pink-100", borderActive: "bg-pink-500" },
-        { id: 'experience', name: 'Experience', href: '#experience', icon: <BriefcaseIcon height="1.2em" />, color: "text-sky-500", bgActive: "bg-sky-50/70 border-sky-100", borderActive: "bg-sky-500" },
-        { name: 'Projects', id: 'projects', href: '#projects', icon: <FolderIcon height="1.2em" />, color: "text-amber-500", bgActive: "bg-amber-50/70 border-amber-100", borderActive: "bg-amber-500" },
-        { name: 'Contact', id: 'contact', href: '#contact', icon: <MailIcon height="1.2em" />, color: "text-slate-900", bgActive: "bg-slate-100 border-slate-200", borderActive: "bg-slate-900" },
+        { name: locale === "id" ? "Beranda" : "Home", id: 'home', href: '#home', icon: <HomeIcon height="1.2em" />, color: "text-indigo-500", bgActive: "bg-indigo-50/70 border-indigo-100", borderActive: "bg-indigo-500" },
+        { name: locale === "id" ? "Tentang" : "About", id: 'about', href: '#about', icon: <PersonOutlineIcon height="1.2em" />, color: "text-pink-500", bgActive: "bg-pink-50/70 border-pink-100", borderActive: "bg-pink-500" },
+        { name: locale === "id" ? "Pengalaman" : "Experience", id: 'experience', href: '#experience', icon: <BriefcaseIcon height="1.2em" />, color: "text-sky-500", bgActive: "bg-sky-50/70 border-sky-100", borderActive: "bg-sky-500" },
+        { name: locale === "id" ? "Proyek" : "Projects", id: 'projects', href: '#projects', icon: <FolderIcon height="1.2em" />, color: "text-amber-500", bgActive: "bg-amber-50/70 border-amber-100", borderActive: "bg-amber-500" },
+        { name: locale === "id" ? "Kontak" : "Contact", id: 'contact', href: '#contact', icon: <MailIcon height="1.2em" />, color: "text-slate-900", bgActive: "bg-slate-100 border-slate-200", borderActive: "bg-slate-900" },
     ];
 
     return (

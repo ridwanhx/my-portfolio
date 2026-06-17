@@ -3,14 +3,17 @@ import PersonOutlineIcon from '@iconify-react/eva/person-outline';
 import BriefcaseIcon from '@iconify-react/lucide/briefcase';
 import FolderIcon from '@iconify-react/lucide/folder';
 import MailIcon from '@iconify-react/lucide/mail';
+import { useLanguage } from "../../context/LanguageContext";
 
 const NavbarLinks = ({ className = "", activeSection, onLinkClick }) => {
+    const { locale } = useLanguage();
+
     const links = [
-        { name: 'Home', id: 'home', href: '#home', icon: <HomeIcon height="1.1em" />, activeClass: "bg-indigo-600 text-white", hoverClass: "hover:bg-indigo-600" },
-        { name: 'About', id: 'about', href: '#about', icon: <PersonOutlineIcon height="1.1em" />, activeClass: "bg-pink-600 text-white", hoverClass: "hover:bg-pink-600" },
-        { name: 'Experience', id: 'experience', href: '#experience', icon: <BriefcaseIcon height="1.1em" />, activeClass: "bg-indigo-600 text-white", hoverClass: "hover:bg-indigo-600" },
-        { name: 'Projects', id: 'projects', href: '#projects', icon: <FolderIcon height="1.1em" />, activeClass: "bg-amber-500 text-white", hoverClass: "hover:bg-amber-500" },
-        { name: 'Contact', id: 'contact', href: '#contact', icon: <MailIcon height="1.1em" />, activeClass: "bg-slate-900 text-white", hoverClass: "hover:bg-slate-900" },
+        { name: locale === "id" ? "Beranda" : "Home", id: 'home', href: '#home', icon: <HomeIcon height="1.1em" />, activeClass: "bg-indigo-600 text-white", hoverClass: "hover:bg-indigo-600" },
+        { name: locale === "id" ? "Tentang" : "About", id: 'about', href: '#about', icon: <PersonOutlineIcon height="1.1em" />, activeClass: "bg-pink-600 text-white", hoverClass: "hover:bg-pink-600" },
+        { name: locale === "id" ? "Pengalaman" : "Experience", id: 'experience', href: '#experience', icon: <BriefcaseIcon height="1.1em" />, activeClass: "bg-indigo-600 text-white", hoverClass: "hover:bg-indigo-600" },
+        { name: locale === "id" ? "Proyek" : "Projects", id: 'projects', href: '#projects', icon: <FolderIcon height="1.1em" />, activeClass: "bg-amber-500 text-white", hoverClass: "hover:bg-amber-500" },
+        { name: locale === "id" ? "Kontak" : "Contact", id: 'contact', href: '#contact', icon: <MailIcon height="1.1em" />, activeClass: "bg-slate-900 text-white", hoverClass: "hover:bg-slate-900" },
     ];
 
     return (

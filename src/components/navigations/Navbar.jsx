@@ -5,10 +5,12 @@ import HamburgerIcon from '@iconify-react/mdi/hamburger';
 import CloseIcon from '@iconify-react/lucide/x';
 import GlobeIcon from '@iconify-react/lucide/globe';
 import { useState, useEffect } from "react";
+import { useLanguage } from "../../context/LanguageContext";
 
 const Navbar = () => {
     const [isOpen, setIsOpen] = useState(false);
     const [activeSection, setActiveSection] = useState("home");
+    const { locale, toggleLanguage } = useLanguage();
 
     useEffect(() => {
         const sections = ["home", "about", "experience", "projects", "contact"];
@@ -53,9 +55,13 @@ const Navbar = () => {
                 />
 
                 <div className="flex items-center gap-2">
-                    <button type="button" className="flex items-center space-x-1 bg-slate-100 hover:bg-slate-200 px-3 py-1.5 rounded-full font-bold text-slate-700 cursor-pointer transition-colors">
+                    <button 
+                        type="button" 
+                        onClick={toggleLanguage}
+                        className="flex items-center space-x-1 bg-slate-100 hover:bg-slate-200 px-3 py-1.5 rounded-full font-bold text-slate-700 cursor-pointer transition-colors"
+                    >
                         <GlobeIcon height="1.1em" className="text-slate-500" />
-                        <span className="text-xs">EN</span>
+                        <span className="text-xs uppercase">{locale}</span>
                     </button>
 
                     <button 
