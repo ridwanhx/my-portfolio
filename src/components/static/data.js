@@ -213,4 +213,29 @@ export const PROJECTS_DATA = [
     },
 ];
 
-
+export const CONTACT_DATA = {
+  info: {
+    title: "Get In Touch.",
+    description: "Have a project in mind or want to collaborate? Feel free to reach out through the form or direct contact methods.",
+    methods: [
+      {
+        id: "email",
+        title: "Email",
+        value: "mr1401.ridwan@gmail.com",
+        icon: "mdi:email-outline",
+        bgClass: "bg-indigo-100 text-indigo-600"
+      },
+      {
+        id: "location",
+        title: "Lokasi",
+        value: "Bandung, Indonesia",
+        icon: "mdi:location-on-outline",
+        bgClass: "bg-pink-100 text-pink-600"
+      }
+    ]
+  },
+  telegram: {
+    token: import.meta.env.VITE_TELEGRAM_BOT_TOKEN,
+    chatId: import.meta.env.VITE_TELEGRAM_CHAT_ID,
+  }
+};
