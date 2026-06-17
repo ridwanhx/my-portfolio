@@ -1,8 +1,9 @@
-import { CERTIFICATES_DATA } from "../../static/data";
+import { useLanguage } from "../../../context/LanguageContext";
 import CertificateGrid from "./CertificateGrid";
 
 const CertificateSection = () => {
-  const { title, list } = CERTIFICATES_DATA;
+  const { data } = useLanguage();
+  const { title, list } = data.CERTIFICATES_DATA;
 
   return (
     <section id="certificate" className="py-16 md:py-24 overflow-hidden">
