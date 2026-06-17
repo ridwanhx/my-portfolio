@@ -73,7 +73,7 @@ const HomeSection = () => {
             </h1>
           </div>
 
-          <p className="text-sm md:text-lg font-bold text-slate-700 mb-6">
+          <p className="text-base md:text-lg font-bold text-slate-700 mb-6">
             {hero.role}
           </p>
 

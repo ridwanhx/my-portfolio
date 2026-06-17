@@ -10,9 +10,9 @@ export const homeData = {
     }
   },
   socials: [
-    { name: "Github", href: "https://github.com", label: "Github Profile", icon: "mdi:github" },
-    { name: "Instagram", href: "https://instagram.com", label: "Instagram Profile", icon: "mdi:instagram" },
-    { name: "Linkedin", href: "https://linkedin.com", label: "Linkedin Profile", icon: "mdi:linkedin" }
+    { name: "Github", href: "https://github.com/ridwanhx", label: "Github Profile", icon: "mdi:github" },
+    { name: "Instagram", href: "https://instagram.com/muha.rdwn0414/", label: "Instagram Profile", icon: "mdi:instagram" },
+    { name: "Linkedin", href: "https://linkedin.com/in/muhardwn0414", label: "Linkedin Profile", icon: "mdi:linkedin" }
   ],
   profileCard: {
     firstName: "Muhamad",
