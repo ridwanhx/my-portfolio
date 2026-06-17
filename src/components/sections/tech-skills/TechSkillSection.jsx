@@ -1,8 +1,14 @@
-import { SKILLS_DATA } from "../../static/data";
+import { useLanguage } from "../../../context/LanguageContext";
 import SkillRow from "./SkillRow";
 
 const TechSkillsSection = () => {
-  const { title, row1, row2 } = SKILLS_DATA;
+  const { data } = useLanguage();
+  
+  const { title, row1, row2 } = data?.SKILLS_DATA || {
+    title: { text: "", highlight: "" },
+    row1: [],
+    row2: []
+  };
 
   return (
     <section id="tech-skills" className="py-16 md:py-24 overflow-hidden">
