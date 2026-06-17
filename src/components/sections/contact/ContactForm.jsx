@@ -4,7 +4,11 @@ import { CONTACT_DATA } from "../../static/data";
 import InputField from "./InputField";
 
 const ContactForm = () => {
-  const [formData, setFormData] = useState({ full_name: "", email: "", message: "" });
+  const [formData, setFormData] = useState({
+    full_name: "",
+    email: "",
+    message: "",
+  });
   const [status, setStatus] = useState({ loading: false, success: null });
 
   const handleChange = (e) => {
@@ -19,15 +23,18 @@ const ContactForm = () => {
     const formatMessage = `📩 *New Message From Portfolio*\n\n👤 *Name:* ${formData.full_name}\n📧 *Email:* ${formData.email}\n\n💬 *Message:*\n${formData.message}`;
 
     try {
-      const response = await fetch(`https://api.telegram.org/bot${token}/sendMessage`, {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          chat_id: chatId,
-          text: formatMessage,
-          parse_mode: "Markdown",
-        }),
-      });
+      const response = await fetch(
+        `https://api.telegram.org/bot${token}/sendMessage`,
+        {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({
+            chat_id: chatId,
+            text: formatMessage,
+            parse_mode: "Markdown",
+          }),
+        },
+      );
 
       if (!response.ok) throw new Error();
 
@@ -39,50 +46,72 @@ const ContactForm = () => {
   };
 
   return (
-    <form onSubmit={handleSubmit} className="p-8 flex flex-col gap-6 rounded-2xl shadow-lg border border-slate-50 bg-white">
-      <InputField 
-        id="full_name" 
-        label="Full Name" 
-        placeholder="Enter your name" 
+    <form
+      onSubmit={handleSubmit}
+      className="p-8 flex flex-col gap-6 rounded-2xl shadow-lg border border-slate-50 bg-white"
+    >
+      <div className="flex gap-3 p-4 rounded-xl bg-amber-50 border border-amber-200 text-amber-900 text-xs leading-relaxed">
+        <Icon
+          icon="mdi:information-outline"
+          className="shrink-0 text-amber-600"
+          height="1.5em"
+        />
+        <p>
+          <strong>Note:</strong> To get a faster response regarding your
+          project, please remember to include your{" "}
+          <strong>Telegram username</strong> inside the message block below.
+        </p>
+      </div>
+      <InputField
+        id="full_name"
+        label="Full Name"
+        placeholder="Enter your name"
         value={formData.full_name}
         onChange={handleChange}
         required
       />
-      <InputField 
-        id="email" 
-        label="Email Address" 
-        type="email" 
-        placeholder="name@email.com" 
+      <InputField
+        id="email"
+        label="Email Address"
+        type="email"
+        placeholder="name@email.com"
         value={formData.email}
         onChange={handleChange}
         required
       />
-      <InputField 
-        id="message" 
-        label="Message" 
-        isTextArea 
-        placeholder="Tell me about your project or idea..." 
+      <InputField
+        id="message"
+        label="Message"
+        isTextArea
+        placeholder="Tell me about your project or idea..."
         value={formData.message}
         onChange={handleChange}
         required
       />
-      
-      <button 
-        type="submit" 
+
+      <button
+        type="submit"
         disabled={status.loading}
         className="flex justify-center items-center p-4 bg-slate-950 hover:bg-slate-900 active:scale-[0.98] disabled:bg-slate-400 text-white gap-2 rounded-2xl transition-all w-full cursor-pointer disabled:cursor-not-allowed"
       >
-        <Icon icon={status.loading ? "line-md:loading-twotone-loop" : "tabler:send"} height="1.5em" />
+        <Icon
+          icon={status.loading ? "line-md:loading-twotone-loop" : "tabler:send"}
+          height="1.5em"
+        />
         <span className="font-medium text-sm">
           {status.loading ? "Sending..." : "Send Message"}
         </span>
       </button>
 
       {status.success === true && (
-        <p className="text-sm font-medium text-emerald-600 text-center">Message sent successfully to Telegram!</p>
+        <p className="text-sm font-medium text-emerald-600 text-center">
+          Message sent successfully to Telegram!
+        </p>
       )}
       {status.success === false && (
-        <p className="text-sm font-medium text-rose-600 text-center">Failed to send message. Try again later.</p>
+        <p className="text-sm font-medium text-rose-600 text-center">
+          Failed to send message. Try again later.
+        </p>
       )}
     </form>
   );
