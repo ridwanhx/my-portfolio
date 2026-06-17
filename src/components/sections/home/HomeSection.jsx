@@ -1,11 +1,12 @@
 import { useState, useEffect } from "react";
 import { Icon } from "@iconify/react";
-import { HOME_DATA } from "../../static/data";
+import { useLanguage } from "../../../context/LanguageContext";
 import SocialLinks from "./SocialLinks";
 import ProfileCard from "./ProfileCard";
 
 const HomeSection = () => {
-  const { hero, socials, profileCard, statusBadge } = HOME_DATA;
+  const { data } = useLanguage();
+  const { hero, socials, profileCard, statusBadge } = data.HOME_DATA;
   
   const [currentText, setCurrentText] = useState("");
   const [isDeleting, setIsDeleting] = useState(false);
@@ -60,7 +61,6 @@ const HomeSection = () => {
     <section id="home" className="py-16 md:py-24">
       <div className="max-w-5xl mx-auto px-4 grid md:grid-cols-2 gap-8 items-stretch">
         
-        {/* Kolom Kiri: Konten Utama */}
         <div className="px-4 md:px-8 flex flex-col justify-center text-start">
           <span className="block uppercase font-medium text-slate-600 mb-4 tracking-wide text-sm">
             {hero.greeting}
@@ -101,7 +101,6 @@ const HomeSection = () => {
           </div>
         </div>
 
-        {/* Kolom Kanan: Profile Card */}
         <ProfileCard cardData={profileCard} badgeData={statusBadge} />
       </div>
     </section>
