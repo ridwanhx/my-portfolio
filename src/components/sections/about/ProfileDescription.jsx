@@ -9,7 +9,7 @@ const ProfileDescription = ({ profile, intro, cv }) => {
         </span>
         <h3 className="text-xl lg:text-3xl font-bold text-slate-800 tracking-tight leading-tight flex flex-col gap-4 items-start">
           <span>
-            I am{" "}
+            { intro.greeting }{" "}
             <span className="inline-block text-white bg-indigo-600 px-3 py-1.5 rounded-xl -rotate-2 shadow-md font-black transition-transform duration-300 hover:rotate-0 hover:scale-110 cursor-default">
               {profile.fullName}
             </span>
