@@ -20,7 +20,11 @@ const ContactForm = () => {
     setStatus({ loading: true, success: null });
 
     const { token, chatId } = CONTACT_DATA.telegram;
-    const formatMessage = `📩 *New Message From Portfolio*\n\n👤 *Name:* ${formData.full_name}\n📧 *Email:* ${formData.email}\n\n💬 *Message:*\n${formData.message}`;
+    const formatMessage =
+      `📩 <b>New Message From Portfolio</b>\n\n` +
+      `👤 <b>Name:</b> ${formData.full_name}\n` +
+      `📧 <b>Email:</b> ${formData.email}\n\n` +
+      `💬 <b>Message:</b>\n${formData.message}`;
 
     try {
       const response = await fetch(
@@ -31,7 +35,7 @@ const ContactForm = () => {
           body: JSON.stringify({
             chat_id: chatId,
             text: formatMessage,
-            parse_mode: "Markdown",
+            parse_mode: "HTML",
           }),
         },
       );
