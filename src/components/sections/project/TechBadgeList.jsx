@@ -1,4 +1,4 @@
-import CodeIcon from "@iconify-react/mdi/code";
+import { Icon } from "@iconify/react";
 
 const TechBadgeList = ({ projectTitle, technologies = [], showHeader = false, limit }) => {
   const stableKey = `${projectTitle.substring(0, 5)}-${projectTitle.length}`;
@@ -12,7 +12,7 @@ const TechBadgeList = ({ projectTitle, technologies = [], showHeader = false, li
     <div className={showHeader ? "border-t border-slate-100 pt-4" : ""}>
       {showHeader && (
         <div className="flex items-center gap-2 text-slate-400 mb-3">
-          <CodeIcon height="1.2em" aria-hidden="true" />
+          <Icon icon="mdi:code" height="1.2em" aria-hidden="true" />
           <h4 className="text-xs uppercase font-semibold tracking-wider">
             Technologies used
           </h4>

@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import CloseIcon from "@iconify-react/mdi/close";
+import { Icon } from "@iconify/react";
 import TechBadgeList from "./TechBadgeList";
 
 const ProjectDetailsOffcanvas = ({ project, isOpen, onClose }) => {
@@ -50,7 +50,7 @@ const ProjectDetailsOffcanvas = ({ project, isOpen, onClose }) => {
           className="absolute top-2.5 right-2.5 p-2 text-slate-100 hover:text-slate-600 rounded-full bg-amber-400 transition-colors z-10"
           aria-label="Close details"
         >
-          <CloseIcon height="1.5em" />
+          <Icon icon="mdi:close" height="1.5em" />
         </button>
         <div className="flex flex-col">
           <div className="w-full h-64 bg-slate-100 overflow-hidden">
@@ -75,7 +75,6 @@ const ProjectDetailsOffcanvas = ({ project, isOpen, onClose }) => {
               </p>
             </section>
 
-            {/* Tampilkan semua teknologi secara utuh di offcanvas */}
             <TechBadgeList 
               projectTitle={project.title} 
               technologies={project.technologies} 
