@@ -13,6 +13,6 @@ export const aboutData = {
   },
   cvButton: {
     text: "Download CV",
-    downloadUrl: "/path-to-your-cv.pdf"
+    downloadUrl: "/cv/en/CV_Muhamad Ridwan_ENG_180626.pdf"
   }
 };
