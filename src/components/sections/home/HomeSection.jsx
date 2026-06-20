@@ -93,7 +93,7 @@ const HomeSection = () => {
             </a>
             <a
               href={hero.actions.secondary.href}
-              className="flex items-center justify-center space-x-1.5 px-5 py-3 border border-slate-300 rounded-full font-medium hover:bg-slate-50 transition-colors text-xs md:text-sm"
+              className="flex items-center justify-center space-x-1.5 px-5 py-3 border bg-white border-slate-300 rounded-full font-medium hover:bg-slate-50 transition-colors text-xs md:text-sm"
             >
               <Icon icon={hero.actions.secondary.icon} height="1.5em" />
               <span>{hero.actions.secondary.text}</span>
