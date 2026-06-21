@@ -22,6 +22,8 @@ export const skillsData = {
     { label: "Figma", icon: "devicon:figma" },
     { label: "Github", icon: "devicon:github" },
     { label: "Composer", icon: "devicon:composer" },
-    { label: "VS Code", icon: "devicon:vscode" }
+    { label: "VS Code", icon: "devicon:vscode" },
+    { label: "Docker", icon: "devicon:docker-wordmark" },
+    { label: "Redis", icon: "devicon:redis" },
   ]
 };
