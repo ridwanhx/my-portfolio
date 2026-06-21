@@ -9,7 +9,8 @@ import ProjectSection from './components/sections/project/ProjectSection';
 import ContactSection from './components/sections/contact/ContactSection';
 import BootScreen from "./components/navigations/BootScreen";
 import { LanguageProvider } from './context/LanguageContext';
-import FluidCursor from "./components/navigations/FluidCursor";
+// import FluidCursor from "./components/navigations/FluidCursor";
+import FollowerCursor from "./components/navigations/FollowerCursor";
 
 function App() {
   const [isBooting, setIsBooting] = useState(true);
@@ -36,7 +37,7 @@ function App() {
         <div className="grid-background"></div>
 
         {/* Fluid cursor */}
-        <FluidCursor/>
+        <FollowerCursor/>
 
         {/* main content */}
         <div className="main-content">
