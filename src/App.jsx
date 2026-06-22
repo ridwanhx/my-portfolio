@@ -10,16 +10,13 @@ import ContactSection from './components/sections/contact/ContactSection';
 import BootScreen from "./components/navigations/BootScreen";
 import { LanguageProvider } from './context/LanguageContext';
 import FluidCursor from "./components/navigations/FluidCursor";
+import { BrowserRouter as Router, Routes, Route, Navigate } from "react-router-dom";
 
-function App() {
+function LandingPageContent() {
   const [isBooting, setIsBooting] = useState(true);
 
   useEffect(() => {
-    if (isBooting) {
-      document.body.style.overflow = "hidden";
-    } else {
-      document.body.style.overflow = "unset";
-    }
+    document.body.style.overflow = isBooting ? "hidden" : "unset";
     return () => {
       document.body.style.overflow = "unset";
     };
@@ -29,16 +26,10 @@ function App() {
     <LanguageProvider>
       {isBooting && <BootScreen onComplete={() => setIsBooting(false)} />}
 
-      {/* wrapper utama, background grid */}
       <div className={`grid-wrapper transition-opacity duration-500 ${isBooting ? "opacity-0" : "opacity-100"}`}>
-        
-        {/* grid element */}
         <div className="grid-background"></div>
-
-        {/* Fluid cursor */}
         <FluidCursor/>
 
-        {/* main content */}
         <div className="main-content">
           <header>
             <Navbar />
@@ -54,9 +45,19 @@ function App() {
             <ContactSection />
           </main>
         </div>
-
       </div>
     </LanguageProvider>
+  );
+}
+
+function App() {
+  return (
+    <Router>
+      <Routes>
+        <Route path="/" element={<Navigate to="/dev" replace />} />
+        <Route path="/:role" element={<LandingPageContent />} />
+      </Routes>
+    </Router>
   );
 }
 
