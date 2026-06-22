@@ -26,6 +26,6 @@ export const experiencesData = [
       "Mendokumentasikan laporan kendala IT secara rutin untuk menjaga transparansi performa sistem.",
       "Menyediakan data laporan valid sebagai bahan evaluasi perbaikan sistem IT perusahaan."
     ],
-    technologies: ["mysql"]
+    technologies: ["Microsoft SQL Server"]
   }
 ];

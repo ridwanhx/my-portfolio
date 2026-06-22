@@ -26,6 +26,6 @@ export const experiencesData = [
       "Regularly documented IT trouble logs to maintain operational system transparency.",
       "Provided valid report data as evaluating materials for company IT infrastructure improvements."
     ],
-    technologies: ["mysql"]
+    technologies: ["Microsoft SQL Server"]
   }
 ];
