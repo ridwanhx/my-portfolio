@@ -44,7 +44,7 @@ const Navbar = () => {
     };
 
     return (
-        <nav className="fixed top-3 left-1/2 -translate-x-1/2 w-[calc(100%-1.5rem)] max-w-2xl bg-white/80 backdrop-blur-lg shadow-md border border-slate-200/50 z-50 rounded-full px-2 transition-all duration-300">
+        <nav className="fixed top-3 left-1/2 -translate-x-1/2 w-[calc(100%-1.5rem)] max-w-172 bg-white/80 backdrop-blur-lg shadow-md border border-slate-200/50 z-50 rounded-full px-2 transition-all duration-300">
             <div className="px-3 h-12 flex items-center justify-between">
                 <NavbarBrand />
                 
