@@ -14,7 +14,7 @@ export const aboutData = {
     },
     cvButton: {
       text: "Unduh CV",
-      downloadUrl: "/cv/id/CV_Muhamad Ridwan_IDN_180626.pdf"
+      downloadUrl: "/cv/dev/id/CV_Muhamad Ridwan_IDN_290626.pdf"
     }
   },
 
