@@ -33,7 +33,7 @@ export const aboutData = {
     },
     cvButton: {
       text: "Unduh CV",
-      downloadUrl: "/cv/id/CV Muhamad Ridwan - IDN.pdf"
+      downloadUrl: "/cv/sys/id/CV_Muhamad Ridwan_IDN_240626_SA.pdf"
     }
   }
 };
