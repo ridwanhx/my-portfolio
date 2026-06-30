@@ -44,9 +44,7 @@ const Navbar = () => {
     };
 
     return (
-        // this is my dummy commit
-        // if you see this, it means i have some other business that makes me to busy for continued this.
-        // adios
+        // this dummy commit for June 30, 2026
         <nav className="fixed top-3 left-1/2 -translate-x-1/2 w-[calc(100%-1.5rem)] max-w-172 bg-white/80 backdrop-blur-lg shadow-md border border-slate-200/50 z-50 rounded-full px-2 transition-all duration-300">
             <div className="px-3 h-12 flex items-center justify-between">
                 <NavbarBrand />
