@@ -33,7 +33,7 @@ export const aboutData = {
     },
     cvButton: {
       text: "Download CV",
-      downloadUrl: "/cv/en/CV Muhamad Ridwan - ENG.pdf"
+      downloadUrl: "/cv/analyst/en/CV_Muhamad Ridwan_EN_020726_SA.pdf"
     }
   }
 };
