@@ -5,6 +5,7 @@ import './index.css'
 import App from './App.jsx'
 
 // dummy commit, see you soon
+// sorry pal, see you in another day i guess
 createRoot(document.getElementById('root')).render(
   <StrictMode>
     <App />
