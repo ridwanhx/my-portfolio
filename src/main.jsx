@@ -4,8 +4,8 @@ import 'modern-normalize/modern-normalize.css';
 import './index.css'
 import App from './App.jsx'
 
-// dummy commit, see you soon
-// sorry pal, see you in another day i guess
+// oh come on..
+// i am sorry guys, maybe next time.
 createRoot(document.getElementById('root')).render(
   <StrictMode>
     <App />
