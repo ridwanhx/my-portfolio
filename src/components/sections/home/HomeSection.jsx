@@ -4,6 +4,7 @@ import { useLanguage } from "../../../context/LanguageContext";
 import SocialLinks from "./SocialLinks";
 import ProfileCard from "./ProfileCard";
 
+// dummy commit
 const HomeSection = () => {
   const { data } = useLanguage();
   const { hero, socials, profileCard, statusBadge } = data.HOME_DATA;
