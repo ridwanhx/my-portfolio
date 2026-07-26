@@ -6,6 +6,7 @@ const ProfileCard = ({ cardData, badgeData }) => {
   const [rotate, setRotate] = useState({ x: 0, y: 0 });
   const [isHovered, setIsHovered] = useState(false);
 
+  // handler mouse move
   const handleMouseMove = (e) => {
     const card = e.currentTarget;
     const box = card.getBoundingClientRect();
