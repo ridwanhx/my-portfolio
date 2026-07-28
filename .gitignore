@@ -3,6 +3,7 @@
 .env.local
 .env.*.local
 dummy.txt
+notes.txt
 
 # Logs
 logs
