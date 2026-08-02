@@ -13,7 +13,7 @@ const Navbar = () => {
     const { locale, toggleLanguage } = useLanguage();
 
     useEffect(() => {
-        const sections = ["home", "about", "experience", "projects", "contact"];
+        const sectionIds = ["home", "about", "experience", "projects", "contact"];
         
         const observerOptions = {
             root: null,
@@ -29,14 +29,33 @@ const Navbar = () => {
             });
         };
 
-        const observer = new IntersectionObserver(observerCallback, observerOptions);
+        const io = new IntersectionObserver(observerCallback, observerOptions);
+        const observedIds = new Set();
 
-        sections.forEach((id) => {
-            const element = document.getElementById(id);
-            if (element) observer.observe(element);
-        });
+        const tryObserveAll = () => {
+            sectionIds.forEach((id) => {
+                if (observedIds.has(id)) return;
+                const el = document.getElementById(id);
+                if (el) {
+                    io.observe(el);
+                    observedIds.add(id);
+                }
+            });
 
-        return () => observer.disconnect();
+            if (observedIds.size === sectionIds.length) {
+                mo.disconnect();
+            }
+        };
+
+        tryObserveAll();
+
+        const mo = new MutationObserver(tryObserveAll);
+        mo.observe(document.body, { childList: true, subtree: true });
+
+        return () => {
+            io.disconnect();
+            mo.disconnect();
+        }
     }, []);
 
     const handleScrollClick = () => {
