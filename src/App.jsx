@@ -1,7 +1,6 @@
 import { BrowserRouter as Router, Routes, Route, Navigate } from "react-router-dom";
 import LandingPageContent from "./LandingPageContent";
 
-// dummy commit
 export default function App() {
   return (
     <Router>
