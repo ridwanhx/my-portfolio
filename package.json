@@ -17,6 +17,7 @@
     "@iconify-react/mdi": "^1.0.2",
     "@iconify-react/tabler": "^1.0.9",
     "@tailwindcss/vite": "^4.3.0",
+    "@vercel/analytics": "^2.0.1",
     "modern-normalize": "^3.0.1",
     "react": "^19.2.6",
     "react-dom": "^19.2.6",

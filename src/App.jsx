@@ -1,5 +1,6 @@
 import { BrowserRouter as Router, Routes, Route, Navigate } from "react-router-dom";
 import LandingPageContent from "./LandingPageContent";
+import { Analytics } from "@vercel/analytics/next"
 
 export default function App() {
   return (
@@ -7,6 +8,7 @@ export default function App() {
       <Routes>
         <Route path="/" element={<Navigate to="/dev" replace />} />
         <Route path="/:role" element={<LandingPageContent />} />
+        <Analytics/>
       </Routes>
     </Router>
   );
