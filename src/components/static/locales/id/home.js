@@ -53,5 +53,33 @@ export const homeData = {
       statusText: "Online",
       action: { text: "Hubungi Saya", href: "#contact" }
     }
+  },
+
+  qa: {
+    hero: {
+      greeting: "Halo, Saya",
+      typingTexts: ["Muhamad Ridwan."],
+      role: "Quality Assurance Engineer",
+      description: "Memastikan kualitas dan keandalan perangkat lunak melalui pengujian manual, otomasi, dan validasi API yang terstruktur.",
+      actions: {
+        primary: { text: "Lihat Proyek", href: "#projects", icon: "lucide:briefcase" },
+        secondary: { text: "Hubungi Saya", href: "#contact", icon: "lucide:mail" }
+      }
+    },
+    socials: [
+      { name: "Github", href: "https://github.com/ridwanhx", label: "Profil Github", icon: "mdi:github" },
+      { name: "Instagram", href: "https://instagram.com/muha.rdwn04/", label: "Profil Instagram", icon: "mdi:instagram" },
+      { name: "Linkedin", href: "https://linkedin.com/in/muhardwn0414", label: "Profil Linkedin", icon: "mdi:linkedin" }
+    ],
+    profileCard: {
+      firstName: "Muhamad",
+      lastName: "Ridwan",
+      role: "QA Engineer"
+    },
+    statusBadge: {
+      username: "@muha.rdwn0414",
+      statusText: "Online",
+      action: { text: "Hubungi Saya", href: "#contact" }
+    }
   }
 };

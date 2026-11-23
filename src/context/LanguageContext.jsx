@@ -8,7 +8,7 @@ export const LanguageProvider = ({ children }) => {
     // inisialisasi role
     const { role } = useParams();
     // inisialisasi role saat ini, tentukan nilai defaultnya "dev"
-    const currentRole = ["dev", "sys"].includes(role) ? role : "dev";
+    const currentRole = ["dev", "sys", "qa"].includes(role) ? role : "dev";
 
     // inisialisasi state
     // set locale

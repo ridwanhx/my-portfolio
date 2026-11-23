@@ -35,5 +35,24 @@ export const aboutData = {
       text: "Unduh CV",
       downloadUrl: "/cv/sys/id/CV_Muhamad Ridwan_IDN_240626_SA.pdf"
     }
+  },
+
+  qa: {
+    profile: {
+      fullName: "Muhamad Ridwan",
+      positionName: "QA Engineer"
+    },
+    introduction: {
+      subtitle: "Izinkan saya memperkenalkan diri",
+      greeting: "Saya",
+      paragraphs: [
+        "Seorang lulusan Informatika yang berfokus pada Quality Assurance, khususnya pengujian aplikasi dan validasi fungsionalitas sistem. Berpengalaman menyusun test case serta melakukan manual dan automation testing menggunakan Playwright dan Cypress, didukung pemahaman Software Development Life Cycle (SDLC) dan Software Testing Life Cycle (STLC).",
+        "Terbiasa melakukan pengujian dan integrasi REST API dengan Postman dan Insomnia, validasi basis data menggunakan SQL, serta pengelolaan version control dan CI/CD dengan Git dan GitLab CI/CD. Berorientasi pada kualitas dan keandalan sistem, dengan kemampuan analitis, problem solving, dan kolaborasi tim yang baik."
+      ]
+    },
+    cvButton: {
+      text: "Unduh CV",
+      downloadUrl: "/cv/qa/id/RESUME_-_Muhamad_Ridwan_-_IDN_-_23112026.pdf"
+    }
   }
 };

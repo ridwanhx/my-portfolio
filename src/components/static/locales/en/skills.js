@@ -51,5 +51,29 @@ export const skillsData = {
       { label: "Git", icon: "devicon:git" },
       { label: "Github", icon: "devicon:github" }
     ]
+  },
+
+  qa: {
+    title: {
+      text: "Testing",
+      highlight: "Tools"
+    },
+    row1: [
+      { label: "Playwright", icon: "devicon:playwright" },
+      { label: "Cypress", icon: "logos:cypress-icon" },
+      { label: "Postman", icon: "devicon:postman" },
+      { label: "Insomnia", icon: "devicon:insomnia" },
+      { label: "Git", icon: "devicon:git" },
+      { label: "Github", icon: "devicon:github" },
+      { label: "GitLab CI/CD", icon: "devicon:gitlab" }
+    ],
+    row2: [
+      { label: "JavaScript", icon: "devicon:javascript" },
+      { label: "TypeScript", icon: "devicon:typescript" },
+      { label: "PHP", icon: "devicon:php" },
+      { label: "Golang", icon: "devicon:go" },
+      { label: "MySQL", icon: "devicon:mysql" },
+      { label: "PostgreSQL", icon: "devicon:postgresql" }
+    ]
   }
 };
