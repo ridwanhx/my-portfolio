@@ -2,10 +2,10 @@ import { useState, useEffect, lazy, Suspense } from "react";
 import { LanguageProvider } from './context/LanguageContext';
 import Navbar from './components/navigations/Navbar';
 import BootScreen from "./components/navigations/BootScreen";
+import { shouldShowBoot } from "./components/navigations/bootState";
 import FluidCursor from "./components/navigations/FluidCursor";
+import HomeSection from './components/sections/home/HomeSection';
 
-// Lazy load untuk semua section agar bundle size lebih kecil
-const HomeSection = lazy(() => import('./components/sections/home/HomeSection'));
 const AboutSection = lazy(() => import('./components/sections/about/AboutSection'));
 const TechSkillSection = lazy(() => import('./components/sections/tech-skills/TechSkillSection'));
 const CertificateSection = lazy(() => import('./components/sections/certificates/CertificateSection'));
@@ -14,7 +14,7 @@ const ProjectSection = lazy(() => import('./components/sections/project/ProjectS
 const ContactSection = lazy(() => import('./components/sections/contact/ContactSection'));
 
 export default function LandingPageContent() {
-  const [isBooting, setIsBooting] = useState(true);
+  const [isBooting, setIsBooting] = useState(shouldShowBoot);
 
   useEffect(() => {
     document.body.style.overflow = isBooting ? "hidden" : "unset";
@@ -25,7 +25,7 @@ export default function LandingPageContent() {
     <LanguageProvider>
       {isBooting && <BootScreen onComplete={() => setIsBooting(false)} />}
 
-      <div className={`grid-wrapper transition-opacity duration-500 ${isBooting ? "opacity-0" : "opacity-100"}`}>
+      <div className="grid-wrapper">
         <div className="grid-background" />
         <FluidCursor />
 
@@ -35,9 +35,9 @@ export default function LandingPageContent() {
           </header>
 
           <main className="mt-16 md:mt-0">
-            {/* Suspense digunakan untuk menunggu proses lazy load selesai */}
-            <Suspense fallback={<div className="text-center py-20">Loading...</div>}>
-              <HomeSection />
+            <HomeSection />
+
+            <Suspense fallback={null}>
               <AboutSection />
               <TechSkillSection />
               <CertificateSection />

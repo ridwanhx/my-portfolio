@@ -1,4 +1,5 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
+import { BOOT_SEEN_KEY } from "./bootState";
 
 const BOOT_WORDS = [
   { text: "Halo", color: "text-amber-500" },
@@ -11,9 +12,19 @@ const BOOT_WORDS = [
   { text: "Привет", color: "text-teal-500" }
 ];
 
+const WORD_INTERVAL = 160;
+const EXIT_DELAY = 1400;
+const EXIT_DURATION = 500;
+
 const BootScreen = ({ onComplete }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isExiting, setIsExiting] = useState(false);
+
+  // simpan callback di ref agar effect tidak ter-reset saat parent re-render
+  const onCompleteRef = useRef(onComplete);
+  useEffect(() => {
+    onCompleteRef.current = onComplete;
+  }, [onComplete]);
 
   useEffect(() => {
     const wordInterval = setInterval(() => {
@@ -24,35 +35,39 @@ const BootScreen = ({ onComplete }) => {
         }
         return prev + 1;
       });
-    }, 300);
+    }, WORD_INTERVAL);
 
-    const exitTimeout = setTimeout(() => {
-      setIsExiting(true);
-    }, 2600);
+    const exitTimeout = setTimeout(() => setIsExiting(true), EXIT_DELAY);
 
     const completeTimeout = setTimeout(() => {
-      onComplete();
-    }, 3200);
+      try {
+        sessionStorage.setItem(BOOT_SEEN_KEY, "1");
+      } catch {
+        // abaikan
+      }
+      onCompleteRef.current();
+    }, EXIT_DELAY + EXIT_DURATION);
 
     return () => {
       clearInterval(wordInterval);
       clearTimeout(exitTimeout);
       clearTimeout(completeTimeout);
     };
-  }, [onComplete]);
+  }, []);
 
   return (
     <div
-      className={`fixed inset-0 bg-slate-50 z-50 flex items-center justify-center transition-transform duration-700 ease-in-out ${
+      className={`fixed inset-0 bg-slate-50 z-60 flex items-center justify-center transition-transform duration-500 ease-in-out ${
         isExiting ? "-translate-y-full" : "translate-y-0"
       }`}
+      aria-hidden="true"
     >
       <div className="text-center">
-        <h1
-          className={`text-4xl md:text-6xl font-bold tracking-tight transition-all duration-300 transform scale-100 opacity-100 ${BOOT_WORDS[currentIndex].color}`}
+        <p
+          className={`text-4xl md:text-6xl font-bold tracking-tight ${BOOT_WORDS[currentIndex].color}`}
         >
           {BOOT_WORDS[currentIndex].text}
-        </h1>
+        </p>
       </div>
     </div>
   );

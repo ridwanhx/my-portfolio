@@ -1,6 +1,5 @@
 'use client';
 import { useEffect, useState } from 'react';
-import fluidCursor from '../../../src/hooks/use-FluidCursor';
 
 const FluidCursor = () => {
   const [isMobileOrTablet, setIsMobileOrTablet] = useState(false);
@@ -25,9 +24,39 @@ const FluidCursor = () => {
   }, []);
 
   useEffect(() => {
-    if (!isMobileOrTablet) {
-      fluidCursor();
+    if (isMobileOrTablet) return;
+
+    let cancelled = false;
+    let idleId;
+    let timeoutId;
+
+    const start = () => {
+      if (cancelled || !document.getElementById('fluid')) return;
+      import('../../hooks/use-FluidCursor').then((mod) => {
+        if (!cancelled) mod.default();
+      });
+    };
+
+    const schedule = () => {
+      if ('requestIdleCallback' in window) {
+        idleId = window.requestIdleCallback(start, { timeout: 3000 });
+      } else {
+        timeoutId = setTimeout(start, 1500);
+      }
+    };
+
+    if (document.readyState === 'complete') {
+      schedule();
+    } else {
+      window.addEventListener('load', schedule, { once: true });
     }
+
+    return () => {
+      cancelled = true;
+      window.removeEventListener('load', schedule);
+      if (idleId !== undefined) window.cancelIdleCallback(idleId);
+      if (timeoutId !== undefined) clearTimeout(timeoutId);
+    };
   }, [isMobileOrTablet]);
 
   if (isMobileOrTablet) return null;
